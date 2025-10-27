@@ -1,6 +1,6 @@
 
 
-# 📊 NZ-CHN Data Analysis Portfolio
+# 📊 Data Analysis Portfolio
 
 This repository showcases my data analysis, econometrics, and macroeconomic modeling work completed during postgraduate study and subsequent independent research.  
 It serves as a technical portfolio to demonstrate proficiency in **data analysis, econometric modeling, and research coding**, supporting future applications for **Data Analyst, Research Assistant, and Quantitative Intern** positions.
