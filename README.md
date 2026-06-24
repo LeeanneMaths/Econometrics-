@@ -1,79 +1,62 @@
+# NCEA Level 1 Literacy and Numeracy Econometrics App
 
+This Streamlit app is designed for a short teaching demonstration using the 2024 NCEA Level 1 Literacy and Numeracy attainment CSV files.
 
-# 📊 Data Analysis Portfolio
+## What The App Demonstrates
 
-This repository showcases my data analysis, econometrics, and macroeconomic modeling work completed during postgraduate study and subsequent independent research.  
-It serves as a technical portfolio to demonstrate proficiency in **data analysis, econometric modeling, and research coding**, supporting future applications for **Data Analyst, Research Assistant, and Quantitative Intern** positions.
+1. Loading multiple CSV files with different grouping dimensions.
+2. Producing descriptive statistics and trend charts.
+3. Comparing attainment-rate gaps across groups.
+4. Estimating weighted least squares models on aggregated data.
+5. Interpreting coefficients carefully without overstating causal claims.
 
----
+## How To Run
 
-## 🧠 Overview
+Open this folder:
 
-The repository combines coursework, experimental scripts, and research-oriented analysis focused on:
-- Applied **time series and panel data analysis**
-- **Macroeconomics and productivity** modeling
-- **Education and gender** research (NZ–CHN comparison)
-- Exploratory work using **Python**, **Stata**, and **MATLAB**
+```powershell
+cd "<path-to-this-folder>\ncea_lit_num_streamlit_app"
+```
 
-Many scripts originated from academic exercises but have been extended and reorganized as independent code examples to demonstrate analytical thinking and coding competence.
+If your normal Python installation has Streamlit installed, run:
 
----
+```powershell
+python -m streamlit run app.py
+```
 
-## 🧰 Tools and Languages
+If `python` opens the Windows Store alias or does not respond correctly, run:
 
-| Tool / Language | Application |
-|-----------------|--------------|
-| **Stata** | Econometrics, panel data models, Markov chain transitions, instrumental variables |
-| **MATLAB** | Macroeconomic simulations, dynamic models, optimization |
-| **Python (pandas, matplotlib)** | Data preprocessing, visualization, breakpoint analysis |
-| **Excel** | Data validation, preliminary statistics, descriptive summaries |
-| **Econometrics Theory** | Regression, time series, RE/FE models, model comparison |
+```powershell
+.\run_app.bat
+```
 
----
+Then open:
 
-## 📁 Project Structure
+```text
+http://localhost:8501
+```
 
-| File / Folder | Description |
-|----------------|-------------|
-| `8002_python.py` | Breakpoint detection using Python |
-| `All industries test 1990-2022.do` | Inflation, productivity, and real wage analysis |
-| `EMET 8002 Problem Set 6.do` | Random effect (RE) model with education variable |
-| `Finished duplication and extensions.do` | Econometrics assignments and replication exercises |
-| `Marko Chain Matrix.do` | Markov transition matrix setup |
-| `pisa_2018.do` | Reading habits comparison between New Zealand and China |
-| `problem*_*.m` | Macroeconomic modeling and simulation assignments |
-| `assignment (do.file).do` | Instrumental variable estimation |
-| `README.md` | This documentation file |
+## Suggested Demonstration Flow
 
----
+1. Start with `National` to show the overall 2015-2024 trend.
+2. Switch to `Ethnicity`, `Gender`, `Region`, or `School Equity Index Group` to show group differences.
+3. Compare `Cumulative Year Attainment Rate` with `Current Year Attainment Rate`.
+4. Open the regression tab and keep `Weighted by Total Student Count` selected.
+5. Add year, qualification, year-level, and group fixed effects, then discuss how the coefficients change.
 
-## 📈 Skills Demonstrated
+## Econometric Framing
 
-✅ Data cleaning, transformation, and descriptive statistics  
-✅ Econometric modeling (OLS, RE, FE, IV, time series)  
-✅ Code-based reproducible research workflow  
-✅ Simulation of macroeconomic dynamics in MATLAB  
-✅ Integration of education and labor-market datasets  
-✅ Interpretation of empirical results for policy or research contexts  
+The app uses aggregated data, not student-level microdata. A useful model framing is:
 
----
+```text
+Attainment Rate = year trend + qualification + year level + group effects + error
+```
 
-## 🚀 Ongoing and Future Work
+The `Post 2020` variable can show average differences after 2020, but it is not a strict causal estimate. Many factors may have changed at the same time, including assessment rules, policy settings, school behaviour, pandemic disruption, and student composition.
 
-- 🧮 Uploading *gender analysis (NZQA 2014–2025)**  
-- 🔄 Integrating **panel data** for cross-country comparison  
-- 📊 Creating **visual dashboards** for gendered mathematics transitions  
-- 🧑‍🏫 Developing **education data visualization templates** for outreach and EdTech use
+## Files
 
----
-
-## 📜 License
-Released under the **MIT License** — feel free to view, fork, and learn from the code for educational purposes.
-
----
-
-## 📬 Contact
-**Leeanne**  
-📧 leanne.ae@gmail.com  
-📍 Christchurch, New Zealand  
-💼 Interested in Data Analytics · Econometrics · Education Research · Quantitative Analysis
+- `app.py`: Streamlit application.
+- `requirements.txt`: Python dependencies.
+- `run_app.bat`: Windows launcher using the Codex-managed Python runtime.
+- `README.md`: This guide.
